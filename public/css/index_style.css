@@ -1,18 +1,18 @@
 .wrapper{
   position:absolute;
   top:25%;
-  background-color:#FFCCCC;
+  background-color:#B4D8E7;
   width:100%;
 }
 
 .header{
   width:100%;
-  background-color:cyan;
+  background-color:#B4D8E7;
   font-size:48px;
   font-family: 'Pacifico', cursive;
   text-align:center;
 }
 
 body{
-  background-color:#FFCCFF;
+  background-color:#56BAEC;
 }
