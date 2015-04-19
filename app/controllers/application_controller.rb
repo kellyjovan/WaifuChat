@@ -17,4 +17,20 @@ class ApplicationController < Sinatra::Base
   get '/new_character' do 
     erb :new_character
   end
+
+  get '/dash' do
+
+  end
+
+  get '/users' do
+
+  end
+
+  get '/characters' do
+
+  end
+
+  get '/search' do
+
+  end
 end
