@@ -33,4 +33,8 @@ class ApplicationController < Sinatra::Base
   get '/search' do
 
   end
+
+  post '/new_character' do
+    redirect '/'
+  end
 end
