@@ -17,9 +17,13 @@ body{
 }
 
 .fa-times{
-  float: right;
+  margin-left:-30px;
 }
 
 textarea{
   resize: none;
+}
+
+.form-control{
+  display: inline;
 }
