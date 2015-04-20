@@ -1,0 +1,25 @@
+body{
+  background-color: #4da6ff;
+}
+
+.box{
+  margin: 10px 0;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+
+/*.box:nth-of-type(even){
+  background-color: #0080ff;
+}*/
+
+.box:nth-of-type(odd){
+  background: #e6e6e6; 
+}
+
+.fa-times{
+  float: right;
+}
+
+textarea{
+  resize: none;
+}
