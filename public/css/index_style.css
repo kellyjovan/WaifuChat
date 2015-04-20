@@ -13,6 +13,33 @@
   text-align:center;
 }
 
+.edit-box{
+  background-color:#B4D8E7;
+  border-radius:15px;
+}
+
 body{
   background-color:#56BAEC;
+}
+
+.btn-primary{
+  background-color:#FFAEAE !important;
+  border-color:white !important;  
+}
+
+.btn-primary:hover{
+  background-color:#B0E57C !important;
+}
+
+.create-btn{
+    background-color:white !important;
+    position:relative;
+    width:300px;
+    left:20%;
+    font-family: 'Pacifico', cursive;
+    font-size:32px;
+}
+
+.btn-default:hover{
+  background-color:#B0E57C !important;
 }
