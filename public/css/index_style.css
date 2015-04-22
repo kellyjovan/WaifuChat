@@ -1,8 +1,7 @@
 .wrapper{
   position:absolute;
   top:25%;
-  background-color:#B4D8E7;
-  width:100%;
+  background-color:#B4D8E7width:100%;
 }
 
 .header{
@@ -42,4 +41,9 @@ body{
 
 .btn-default:hover{
   background-color:#B0E57C !important;
+}
+
+.indx-div{
+  background-color:#B4D8E7;
+  border-radius:15px;
 }
