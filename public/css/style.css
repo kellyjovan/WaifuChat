@@ -27,3 +27,11 @@ textarea{
 .form-control{
   display: inline;
 }
+
+/*profile css*/
+
+#portrait{
+  width:100%;
+  border-radius:10px;
+}
+
