@@ -35,6 +35,19 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/new_character' do
-    redirect '/'
+    new_character = Character.new(:name => params[:name], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio])
+    new_character.save
+    redirect('/')
+  end
+
+  post '/signup' do
+    new_user = User.new(:email => params[:email], :username => params[:email], :password => params[:password])
+    new_user.save
+    redirect('/')
+  end
+
+  post '/signin' do 
+    @user = User.find_by(:username => params[:username], :password => params[:password])
+    redirect('/')
   end
 end
