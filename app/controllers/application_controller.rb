@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/characters' do
-    erb :charatemplate
+    erb :chara_template
   end
 
   get '/search' do
