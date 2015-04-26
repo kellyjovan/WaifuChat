@@ -26,12 +26,33 @@ textarea{
 
 .form-control{
   display: inline;
-}
+} 
 
 /*profile css*/
 
-#portrait{
+.portrait{
   width:100%;
   border-radius:10px;
 }
 
+.profile-wrap{
+  margin-top:5%;
+  margin-left:7%;
+  margin-right:7%;
+  background-color:#B4D8E7;
+}
+
+/*.shade{
+  background-color:rgba(255,255,255,.2);
+  border-radius:15px;
+}*/
+
+.name{
+  font-size:36px;
+  font-family:'Pacifico', cursive;
+  text-align:center;
+}
+
+.info{
+  font-size:24px;
+}
