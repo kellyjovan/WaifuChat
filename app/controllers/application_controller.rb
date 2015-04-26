@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/dash' do
-
+    erb :dash
   end
 
   get '/users' do
