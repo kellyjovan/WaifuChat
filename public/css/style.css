@@ -2,6 +2,10 @@ body{
   background-color: #56BAEC;
 }
 
+.row{
+  margin:0px !important;
+}
+
 .box{
   margin: 10px 0;
   padding: 20px 10px;
@@ -33,6 +37,7 @@ textarea{
 .portrait{
   width:100%;
   border-radius:10px;
+  padding:5px;
 }
 
 .profile-wrap{
@@ -40,12 +45,9 @@ textarea{
   margin-left:7%;
   margin-right:7%;
   background-color:#B4D8E7;
+  padding:25px;
+  border-radius:5px;
 }
-
-/*.shade{
-  background-color:rgba(255,255,255,.2);
-  border-radius:15px;
-}*/
 
 .name{
   font-size:36px;
@@ -55,4 +57,14 @@ textarea{
 
 .info{
   font-size:24px;
+  margin-left:0px;
+  margin-right:0px;
+  margin-top:15px;
+  margin-bottom:15px;
+  border-radius:5px;
+  background-color:rgba(255,255,255,.6);
+}
+
+.bio{
+
 }
