@@ -26,10 +26,10 @@ class ApplicationController < Sinatra::Base
 
   end
 
-  get '/characters' do
+  get '/character/:id' do
+    @character = Character.find(params[:id])
     erb :chara_template
   end
-
   get '/search' do
 
   end
