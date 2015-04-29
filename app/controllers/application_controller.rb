@@ -27,9 +27,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/characters' do
-    @characters = Characters.all
-    @characters = @characters.sort_by {|character| }
-    erb :character
+    @characters = Character.all
+    # @characters = @characters.sort_by {|character| character.name}
+    erb :characters
   end
 
   get '/character/:id' do
@@ -41,6 +41,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/new_character' do
+    params[:name] = params[:name].capitalize
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :images => params[:images])
     new_character.save
     length = Character.all.length
