@@ -26,16 +26,16 @@ class ApplicationController < Sinatra::Base
 
   end
 
-  get '/characters' do
+  get '/character/:id' do
+    @character = Character.find(params[:id])
     erb :chara_template
   end
-
   get '/search' do
 
   end
 
   post '/new_character' do
-    new_character = Character.new(:name => params[:name], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio])
+    new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio])
     new_character.save
     redirect('/')
   end

@@ -1,6 +1,10 @@
 body, html, .main, .aside{
   height: 100%;
 }
+
+body{
+  overflow: hidden;
+}
 .main{
   background-color: #56BAEC;
   padding-top: 20px;
