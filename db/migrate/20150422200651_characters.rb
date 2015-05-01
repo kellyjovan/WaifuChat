@@ -6,6 +6,9 @@ class Characters < ActiveRecord::Migration
       t.string :origin
       t.string :birthday
       t.string :bio
+      t.string :nickname
+      t.string :quote
+      t.string :image
     end
   end
 

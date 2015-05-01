@@ -14,7 +14,13 @@
     
     <div class="profile-wrap">
       <% @characters.each do |c| %>
-        <div class="col-sm-12"><h1><%= c.name %></h1></div>
+      <% if c.image == nil then c.image = "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png" end %>
+        <div class="col-xs-6 col-md-3">
+          <a href=<%= '/character/' + c.id.to_s %> class="thumbnail">
+            <img src="<%= c.image %>" alt="<%= c.name %>">
+          </a>
+          <center><a href=<%= '/character/' + c.id.to_s %>><h3><%= c.name %></h3></a></center>
+        </div>
       <% end %>
     </div>
 

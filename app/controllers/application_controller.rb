@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
 
   get '/characters' do
     @characters = Character.all
-    # @characters = @characters.sort_by {|character| character.name}
+    @characters = @characters.sort_by {|character| character.name}
     erb :characters
   end
 
@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
 
   post '/new_character' do
     params[:name] = params[:name].capitalize
-    new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :images => params[:images])
+    new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
     length = Character.all.length
     redirect('/character/' + length.to_s);
