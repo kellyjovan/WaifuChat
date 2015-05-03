@@ -3,14 +3,21 @@
   margin-left: 7%;
 }
 
-.header{
-  width:100%;
-  background-color:#B4D8E7;
-  font-size:48px;
+.navbar-default{
+  /*background-color:#B4D8E7;*/
+  border: #56BAEC;
+}
+
+.navbar-brand{
+  /*font-size:48px;*/
   font-family: 'Pacifico', cursive;
   text-align:center;
 }
 
+#search{
+  position: absolute;
+  right: 20px;
+}
 .edit-box{
   background-color:#B4D8E7;
   border-radius:15px;

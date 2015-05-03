@@ -12,15 +12,9 @@ body{
 .aside{
   background-color: #199bdd;
 }
-
-.header{
-  width:100%;
-  background-color:#B4D8E7;
-  font-size:48px;
-  font-family: 'Pacifico', cursive;
-  text-align:center;
+.main, .aside{
+  margin-top: -20px;
 }
-
 .profile-pic{
   border: #B4D8E7 double 8px;
   height: 40%;
