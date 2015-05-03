@@ -1,5 +1,5 @@
 .pic{
-  height:150px;
+  height:165px;
 }
 
 .name{
@@ -9,14 +9,38 @@
 }
 
 .shadow{
-  box-shadow:3px 3px 2px 2px black;
+  box-shadow:3px 3px 10px 1px #56BAEC;
   border-radius:15px;
 }
 
 .title{
-  background-color:#428bca;
+  background-color:#FFF0AA;
+  border-radius:10px;
 }
 
 .head-wrap{
-  background-color:;
+  background-color:#FFEC94;
+  padding:10px;
+}
+
+.about-marg{
+  margin-top:10px;
+}
+
+.about-h1{
+  padding:2px;
+  text-align:center;
+  font-size:48px;
+  font-family:'Pacifico', cursive;
+  color:white;
+}
+
+.about-body{
+  font-size:22px;
+  padding:10px;
+  background-color:white;
+  font-family:'Pacifico', cursive;
+  word-wrap:break-word;
+  border-radius:10px;
+  margin-bottom:15px;
 }
