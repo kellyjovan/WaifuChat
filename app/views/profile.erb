@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Waifu Chat - <%=%></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/profile.css">
+  </head>
+  <body>
+    <div class="header">
+    Waifu Chat
+    </div>
+    <% #if @user.image == nil then @user.image = "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"%><% #end %> 
+    <div class="profile-wrap">
+    <div class="row">
+      <div class="col-lg-3">
+        <img class="pic shadow" src="http://28.media.tumblr.com/tumblr_m22hb6PySS1rrhfu7o1_1280.jpg">
+      </div>
+      <div class="col-lg-6 col-lg-offset-1 title">
+        <h1 class="name">Blank</h1>
+        <p>Member Since: 0x,0x,19xx</p><br>
+        <p>Last signed on: xxxxxx</p>
+      </div>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

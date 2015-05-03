@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users' do
-
+    erb :profile
   end
 
   get '/characters' do
