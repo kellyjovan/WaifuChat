@@ -13,18 +13,49 @@
     </div>
     <% #if @user.image == nil then @user.image = "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"%><% #end %> 
     <div class="profile-wrap">
-    <div class="row">
+    <div class="row head-wrap">
       <div class="col-lg-3">
         <img class="pic shadow" src="http://28.media.tumblr.com/tumblr_m22hb6PySS1rrhfu7o1_1280.jpg">
       </div>
-      <div class="col-lg-6 col-lg-offset-1 title">
+      <div class="col-lg-7 col-lg-offset-1 title shadow">
         <h1 class="name">Blank</h1>
-        <p>Member Since: 0x,0x,19xx</p><br>
-        <p>Last signed on: xxxxxx</p>
+        <p class="panel">Member Since: 0x,0x,19xx</p><br>
+        <p class="panel">Last signed on: xxxxxx</p>
       </div>
     </div>
-    </div>
+    <br>
+    <!-- Profile Information -->
+      <div class="row head-wrap">
+        <div class="col-lg-6 title shadow">
+        <br>
+          <ul class="list-group">
+              <li class="list-group-item">
+              Name:</li>
+              <li class="list-group-item">
+              DOB:</li>
+              <li class="list-group-item">
+              Country:</li>
+             
+              <li class="list-group-item">
+              Language: </li>
+            </ul>
+        </div>
 
+        <div class="col-lg-4 col-lg-offset-1 title shadow">
+        <h1 class="name">Favourites</h1>
+        </div>
+
+        </div>
+
+         <div class="row head-wrap about-marg">
+          <div class="col-lg-12 title shadow">
+            <h1 class="about-h1">About</h1>
+            <div class="about-body">
+              Jovan is a banana.
+            </div>
+          </div>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
