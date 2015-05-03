@@ -96,3 +96,13 @@ textarea{
   font-family: 'Pacifico', cursive;
   text-align:center;
 }
+
+.cancel-btn{
+  margin:0px !important;
+  width:75% !important
+}
+
+.create-btn{
+  margin:0px !important;
+  width:75% !important;
+}.
