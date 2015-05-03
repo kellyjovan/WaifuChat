@@ -2,6 +2,8 @@
   margin-top: 5%;
   margin-left: 7%;
 }
+
+<<<<<<< HEAD
 .navbar-default{
   /*background-color:#B4D8E7;*/
   border: #56BAEC;
@@ -17,6 +19,8 @@
   position: absolute;
   right: 20px;
 }
+=======
+>>>>>>> c05982f4c71f8779f87232ab1c093d38cf8a25c4
 .edit-box{
   background-color:#B4D8E7;
   border-radius:15px;

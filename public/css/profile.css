@@ -1,0 +1,22 @@
+.pic{
+  height:150px;
+}
+
+.name{
+  color:white;
+    font-family:'Pacifico', cursive;
+    font-size:30px;
+}
+
+.shadow{
+  box-shadow:3px 3px 2px 2px black;
+  border-radius:15px;
+}
+
+.title{
+  background-color:#428bca;
+}
+
+.head-wrap{
+  background-color:;
+}
