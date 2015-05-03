@@ -44,8 +44,7 @@ class ApplicationController < Sinatra::Base
     params[:name] = params[:name].capitalize
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
-    length = Character.all.length
-    redirect('/character/' + length.to_s);
+    redirect('/character/' + new_character.id.to_s);
   end
 
   post '/signup' do
@@ -57,5 +56,13 @@ class ApplicationController < Sinatra::Base
   post '/signin' do 
     @user = User.find_by(:username => params[:username], :password => params[:password])
     redirect('/')
+  end
+
+  post '/delete' do 
+    # delete character with selected id
+    id = params[:id]
+    @character = Character.find(id)
+    @character.destroy
+    redirect('/characters')
   end
 end

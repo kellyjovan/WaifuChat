@@ -35,16 +35,32 @@ body{
   background-color:#B0E57C !important;
 }
 
-.create-btn{
-    background-color:white !important;
-    position:relative;
-    width:300px;
-    font-family: 'Pacifico', cursive;
-    font-size:32px;
+.create-btn, .cancel-btn, .edit-btn{
+  position:relative;
+  width:300px;
+  font-family: 'Pacifico', cursive;
+  font-size:32px;
 }
 
-.btn-default:hover{
-  background-color:#B0E57C !important;
+.create-btn{
+    background-color:white !important;
+}
+
+.cancel-btn{
+  background-color: #ffa9a9;
+  margin-left: 50px;
+}
+
+.edit-btn{
+  background-color: #d8d8d8;
+}
+
+.cancel-btn:hover{
+  background-color: #ff9090;
+}
+
+.create-btn:hover{
+  background-color:#B0E57C;
 }
 
 .indx-div{
