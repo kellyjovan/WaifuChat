@@ -36,12 +36,17 @@ class ApplicationController < Sinatra::Base
     @character = Character.find(params[:id])
     erb :chara_template
   end
+
+  get '/character/edit/:id' do
+    @character = Character.find(params[:id])
+    erb :edit
+  end
   get '/search' do
 
   end
 
   post '/new_character' do
-    params[:name] = params[:name].capitalize
+    params[:name] =  params[:name].split(' ').each{|n| n.capitalize!}.join(' ')
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
     redirect('/character/' + new_character.id.to_s);
@@ -64,5 +69,11 @@ class ApplicationController < Sinatra::Base
     @character = Character.find(id)
     @character.destroy
     redirect('/characters')
+  end
+
+  post '/edit' do
+    @character = Character.find(params[:id])
+    @character.update_attributes!(:origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
+    redirect('/character/' + @character.id.to_s)
   end
 end

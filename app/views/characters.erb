@@ -48,7 +48,7 @@
     </nav>
     <div class="profile-wrap col-sm-10">
       <ul class="list-group">
-        <li class="list-group-item">There are <%= @characters.length%> results<a href="/new_character"><button class="btn btn-primary" type="button" style="position: absolute; right: 10px; top: 3px"> Add Character </button></a></li>
+        <li class="list-group-item"><span class="label label-info "><%= @characters.length %> Characters</span><a href="/new_character"><button class="btn btn-primary" type="button" style="position: absolute; right: 10px; top: 3px"> Add Character </button></a></li>
       </ul>
       <% @characters.each do |c| %>
       <% @c = c %>
