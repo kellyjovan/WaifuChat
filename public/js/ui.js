@@ -9,5 +9,5 @@ $(document).ready(function(){
     $(this).css("transform", "rotate(0deg)");
     $(this).css("font-family", "'Helvetica Neue',Helvetica,Arial,sans-serif");
   });
-})
 
+  });
