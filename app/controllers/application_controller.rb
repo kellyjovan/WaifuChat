@@ -49,14 +49,25 @@ class ApplicationController < Sinatra::Base
     params[:name] =  params[:name].split(' ').each{|n| n.capitalize!}.join(' ')
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
-    binding.pry
     redirect('/character/' + new_character.id.to_s);
   end
 
   post '/signup' do
-    new_user = User.new(:email => params[:email], :username => params[:email], :password => params[:password])
+    new_user = User.new(:email => params[:email], :username => params[:username], :password => params[:password])
     new_user.save
-    redirect('/')
+    redirect('/user/' + new_user.id.to_s)
+  end
+
+    get '/user/:id' do
+    @user = User.find(params[:id])
+    erb :profile
+  end
+
+  get '/user/edit/:id' do
+    @user = User.find(params[:id])
+    @user.update_attributes!(:name => params[:name], :birthday => params[:birthday], :country => params[:country], :image => params[:image], :language => params[:language], :about => params[:about])
+    redirect('/user/' + )
+    erb :edit_user
   end
 
   post '/signin' do 
