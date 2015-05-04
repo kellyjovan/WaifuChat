@@ -49,6 +49,7 @@ class ApplicationController < Sinatra::Base
     params[:name] =  params[:name].split(' ').each{|n| n.capitalize!}.join(' ')
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
+    binding.pry
     redirect('/character/' + new_character.id.to_s);
   end
 

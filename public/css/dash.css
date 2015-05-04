@@ -31,6 +31,7 @@ h1, h3{
 }
 .name{
   margin-left: 40px;
+  text-align: left !important;
 }
 
 textarea{
