@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index_style.css">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href="css/dash.css" rel="stylesheet"/>
   <meta charset="utf-8">
   <title>JS Bin</title>
 </head>
 <body>
-<nav class="navbar navbar-default">
+
+  <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -24,13 +28,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/dash">Dash</a></li>
-            <li><a href="/characters">Characters</a></li>
-              </ul>
-            </li>
+            <li class="ui"><a href="/dash">Dash</a></li>
+            <li class="ui"><a href="/characters">Characters</a></li>
+            <li class="ui"><a href="/users">Community</a></li>
+            <li class="ui"><a href="/edit">Edit Profile</a></li>
           </ul>
           <form class="navbar-form navbar-left" id="search">
             <div class="col-sm-12">
+              
                 <div class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" id="inputGroup">
@@ -46,6 +51,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
   <div class="col-sm-9 main">
     <div class="col-sm-6" style="height: 100%">
       <div class="profile-pic col-sm-12">
@@ -62,7 +68,10 @@
   <div class="col-sm-3 aside">
     
   </div>
-  <script src="//code.jquery.com/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </body>
 </html>
