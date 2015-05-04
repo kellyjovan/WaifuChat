@@ -105,4 +105,19 @@ textarea{
 .create-btn{
   margin:0px !important;
   width:75% !important;
-}.
+}
+
+.ui{
+  transition:transform 800ms;
+  font-size:16px;
+}
+
+.container-fluid{
+  background-color:#B4D8E7 !important;
+  border-bottom-style: solid;
+  border-color:#FFF0AA;
+}
+
+
+
+

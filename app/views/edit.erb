@@ -25,10 +25,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/dash">Dash</a></li>
-            <li><a href="/characters">Characters</a></li>
-              </ul>
-            </li>
+            <li class="ui"><a href="/dash">Dash</a></li>
+            <li class="ui"><a href="/characters">Characters</a></li>
+            <li class="ui"><a href="/users">Community</a></li>
+            <li class="ui"><a href="/edit">Edit Profile</a></li>
           </ul>
           <form class="navbar-form navbar-left" id="search">
             <div class="col-sm-12">
@@ -152,7 +152,6 @@
         </div>
         
         <hr>
-        
        <div class="col-sm-12">
           <div class="col-sm-6">
             <a href="/character/<%= @character.id.to_s %>">
@@ -167,6 +166,9 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
