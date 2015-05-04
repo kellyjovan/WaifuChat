@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>WaifuChat - New Character</title>
+    <title>WaifuChat - Edit <%= @character.name %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -25,14 +25,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="ui"><a href="/dash">Dash</a></li>
-            <li class="ui"><a href="/characters">Characters</a></li>
-            <li class="ui"><a href="/users">Community</a></li>
-            <li class="ui"><a href="/edit">Edit Profile</a></li>
+            <li><a href="/dash">Dash</a></li>
+            <li><a href="/characters">Characters</a></li>
+              </ul>
+            </li>
           </ul>
           <form class="navbar-form navbar-left" id="search">
             <div class="col-sm-12">
-              
                 <div class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" id="inputGroup">
@@ -48,23 +47,19 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    
+
     <div class="container edit-box">
     <br>
 
-      <form class="form-horizontal" action="new_character" method="POST">
-        <div class="form-group">
-          <label class="col-sm-2 control-label">Character</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" name="name" placeholder="Name">
-          </div>
-        </div>
+      <form class="form-horizontal" action="edit" method="POST">
+          
+      <center><h1><%= @character.name %></h1></center>
 
         <hr>
           <div class="form-group">
           <label class="col-sm-2 control-label">Image Portrait</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="image" placeholder="Paste .jpg URL for portrait picture">
+            <input type="text" class="form-control" value="<%= @character.image %>" name="image" placeholder="Paste .jpg URL for portrait picture">
           </div>
         </div>
         <hr>
@@ -72,7 +67,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">Gender</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="gender" placeholder="Gender">
+            <input type="text" class="form-control" value="<%= @character.gender %>" name="gender" placeholder="Gender">
           </div>
         </div>
 
@@ -81,7 +76,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">Origin/Birthplace</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="origin" placeholder="Origin/Birthplace">
+            <input type="text" class="form-control"  name="origin" placeholder="Origin/Birthplace">
           </div>
         </div>
         
@@ -90,28 +85,28 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">Birthday</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="birthday" placeholder="Birthday">
+            <input type="text" class="form-control" value="<%= @character.birthday %>" name="birthday" placeholder="Birthday">
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-2 control-label">Quote</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="quote" placeholder="Quote">
+            <input type="text" class="form-control" value="<%= @character.quote %>" name="quote" placeholder="Quote">
           </div>
         </div>
         
         <div class="form-group">
           <label class="col-sm-2 control-label">Nickname</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="nickname" placeholder="Nickname">
+            <input type="text" class="form-control" name="nickname" value="<%= @character.nickname %>" placeholder="Nickname">
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-2 control-label">Bio</label>
           <div class="col-sm-9">
-            <textarea class="form-control" name="bio" placeholder="Character Bio" rows="6" resize="none"></textarea>
+            <textarea class="form-control" name="bio" value="<%= @character.bio %>" placeholder="Character Bio" rows="6" resize="none"></textarea>
           </div>
         </div>
         
@@ -158,18 +153,19 @@
         
         <hr>
         
-        <div class="form-group">
-          <div class="col-sm-10 col-sm-offset-2">
-            <div class="col-sm-6"><button type="submit" class="btn btn-default create-btn">Create Character</button></div><div class="col-sm-6"><a href="/characters"><button class="btn btn-default cancel-btn">Cancel</button></a></div></center>
+        <div class="col-sm-12">
+          <div class="col-sm-6">
+            <a href="/character/edit/<%= @character.id.to_s %>">
+            <button type="submit" class="btn btn-default cancel-btn">Cancel</button>
+            </a>
           </div>
-        </div>
-      </form>
+          <div class="col-sm-6">
+            <button type="submit" class="btn btn-default edit-btn">Save Changes</button>
+          </div>      
+        </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="/js/ui.js"></script>
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

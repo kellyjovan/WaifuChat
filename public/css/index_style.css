@@ -37,7 +37,7 @@ body{
 
 .create-btn, .cancel-btn, .edit-btn{
   position:relative;
-  width:300px;
+  width:100%;
   font-family: 'Pacifico', cursive;
   font-size:32px;
 }
@@ -66,4 +66,7 @@ body{
 .indx-div{
   background-color:#B4D8E7;
   border-radius:15px;
+}
+a:hover{
+  text-decoration: none;
 }
