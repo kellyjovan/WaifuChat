@@ -1,54 +1,4 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Waifu Chat - Characters</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/index_style.css">
-    <link rel="shortcut icon" href="http://31.media.tumblr.com/avatar_0654a14fe211_128.png">
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Waifu Chat</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="ui"><a href="/dash">Dash</a></li>
-            <li class="ui"><a href="/characters">Characters</a></li>
-            <li class="ui"><a href="/users">Community</a></li>
-            <li class="ui"><a href="/edit">Edit Profile</a></li>
-          </ul>
-          <form class="navbar-form navbar-left" id="search">
-            <div class="col-sm-12">
-              
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" id="inputGroup">
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-          </form>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-x
     <div class="profile-wrap col-sm-10">
       <ul class="list-group">
         <li class="list-group-item"><span class="label label-info "><%=@users.length%>Users</span><a href="/new_character"><button class="btn btn-primary" type="button" style="position: absolute; right: 10px; top: 3px"> Add Character </button></a></li>
@@ -58,19 +8,10 @@ x
       <% if c.image == nil then c.image = "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png" end %>
         <div class="col-xs-6 col-md-3">
           <a href=<%= '/character/' + c.id.to_s %> class="thumbnail">
-            <img src="<%= c.image %>" alt="<%= c.name %>">
+            <img src="<%= c.image %>" alt="<%= c.username %>">
           </a>
-          <center><a href=<%= '/character/' + c.id.to_s %>><h3><%= c.name %></h3></a></center>
+          <center><a href=<%= '/character/' + c.id.to_s %>><h3><%= c.username %></h3></a></center>
         </div>
       <% end %>
     </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="/js/ui.js"></script>
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>
-    </script>
-  </body>
-</html>
