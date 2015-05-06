@@ -69,4 +69,101 @@ body{
 }
 a:hover{
   text-decoration: none;
+} 
+.dash{
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+img{
+  width: 100%;
+}
+.profile{
+  background-color: #1463ff;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.profile img{
+  border-radius: 5px 5px 0px 0px;
+}
+
+.profile div .list-group .list-group-item{
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0 10px;
+}
+
+h1, h3{
+  font-family: 'Pacifico', cursive;
+}
+.username{
+  margin-left: 40px;
+  text-align: left !important;
+}
+
+textarea{
+  resize: none;
+}
+.message-btn{
+  height: 94px;
+}
+
+.message-container{
+  height: 400px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e2e2e2;
+}
+.well{
+  color: black;
+}
+
+.pic{
+  height:165px;
+}
+
+.name{
+  color:white;
+    font-family:'Pacifico', cursive;
+    font-size:30px;
+}
+
+.shadow{
+  box-shadow:3px 3px 10px 1px #56BAEC;
+  border-radius:15px;
+}
+
+.title{
+  background-color:#FFF0AA;
+  border-radius:10px;
+}
+
+.head-wrap{
+  background-color:#FFEC94;
+  padding:10px;
+}
+
+.about-marg{
+  margin-top:10px;
+}
+
+.about-h1{
+  padding:2px;
+  text-align:center;
+  font-size:48px;
+  font-family:'Pacifico', cursive;
+  color:white;
+}
+
+.about-body{
+  font-size:22px;
+  padding:10px;
+  background-color:white;
+  font-family:'Pacifico', cursive;
+  word-wrap:break-word;
+  border-radius:10px;
+  margin-bottom:15px;
 }

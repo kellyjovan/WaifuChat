@@ -19,6 +19,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/dash' do
+    @user = User.find_by(1);
     erb :dash
   end
 
@@ -49,7 +50,7 @@ class ApplicationController < Sinatra::Base
     params[:name] =  params[:name].split(' ').each{|n| n.capitalize!}.join(' ')
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
-    redirect('/character/' + new_character.id.to_s)
+    redirect('/character/' + new_character.id.to_s);
   end
 
   post '/signup' do
@@ -65,12 +66,19 @@ class ApplicationController < Sinatra::Base
 
   get '/user/edit/:id' do
     @user = User.find(params[:id])
+    redirect('/user/' + params[:id].to_s)
     erb :edit_user
   end
 
   post '/signin' do 
     @user = User.find_by(:username => params[:username], :password => params[:password])
     redirect('/')
+  end
+
+  post '/search' do
+    @results = []
+    result = Character.find_by(params[:query])
+    @results << result
   end
 
   post '/delete' do 
