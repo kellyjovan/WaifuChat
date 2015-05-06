@@ -36,10 +36,10 @@
                 <div class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" id="inputGroup">
-                        <span class="input-groupz-addon">
+                        <span class="input-group-addon">
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                         </span>
-                    </div>z
+                    </div>
                 </div>
             </div>
           </form>
@@ -51,9 +51,9 @@
 
     <div class="profile-wrap col-sm-10">
       <ul class="list-group">
-        <li class="list-group-item"><span class="label label-info "><%= @characters.length %> Characters</span><a href="/new_character"><button class="btn btn-primary" type="button" style="position: absolute; right: 10px; top: 3px"> Add Character </button></a></li>
+        <li class="list-group-item"><span class="label label-info "><%= @users.length %> Characters</span><a href="/new_character"><button class="btn btn-primary" type="button" style="position: absolute; right: 10px; top: 3px"> Add Character </button></a></li>
       </ul>
-      <% @characters.each do |c| %>
+      <% @users.each do |c| %>
       <% @c = c %>
       <% if c.image == nil then c.image = "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png" end %>
         <div class="col-xs-6 col-md-3">

@@ -13,3 +13,4 @@ class Name < ActiveRecord::Migration
     remove_column :users, :language
   end
 end
+  

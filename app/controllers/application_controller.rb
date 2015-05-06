@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users' do
-    erb :profile
+    erb :users
   end
 
   get '/characters' do
@@ -58,15 +58,13 @@ class ApplicationController < Sinatra::Base
     redirect('/user/' + new_user.id.to_s)
   end
 
-    get '/user/:id' do
+  get '/user/:id' do
     @user = User.find(params[:id])
     erb :profile
   end
 
   get '/user/edit/:id' do
     @user = User.find(params[:id])
-    @user.update_attributes!(:name => params[:name], :birthday => params[:birthday], :country => params[:country], :image => params[:image], :language => params[:language], :about => params[:about])
-    redirect('/user/' + )
     erb :edit_user
   end
 
@@ -81,6 +79,12 @@ class ApplicationController < Sinatra::Base
     @character = Character.find(id)
     @character.destroy
     redirect('/characters')
+  end
+
+  post '/edituser' do
+    @user = User.find(params[:id])
+    @user.update_attributes!(:name => params[:name], :birthday => params[:birthday], :country => params[:country], :image => params[:image], :language => params[:language], :about => params[:about])
+    redirect('/user/' + @user.id.to_s)
   end
 
   post '/edit' do
