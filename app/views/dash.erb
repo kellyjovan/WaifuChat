@@ -5,14 +5,14 @@
   </style>
 <div class="dash">
   <div class="col-sm-12 main">
-    <div><h1 class="username"><%= @logged_in_user.username %></h1></div>
+    <div><h1 class="username"><%= @user.username %></h1></div>
     <div class="col-sm-4 profile">
       <img src="http://www.engraversnetwork.com/files/placeholder.jpg"/>
       
       <div class="col-sm-12">
         <ul class="list-group">
           <li class="list-group-item"><h3></h3></li>
-          <li class="list-group-item"><%= @logged_in_user.email %></li>
+          <li class="list-group-item"><%= @user.email %></li>
           <br>
           <li class="list-group-item">
             Stuff about me

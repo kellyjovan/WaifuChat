@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    @logged_in_user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
     erb :index
   end
 
@@ -21,27 +21,39 @@ class ApplicationController < Sinatra::Base
 
   get '/dash' do
     if session[:user_id]
-      @logged_in_user = User.find(session[:user_id])
+      @user = User.find(session[:user_id])
     end
     erb :dash
   end
 
   get '/users' do
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     erb :profile
   end
 
   get '/characters' do
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @characters = Character.all
     @characters = @characters.sort_by {|character| character.name}
     erb :characters
   end
 
   get '/character/:id' do
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @character = Character.find(params[:id])
     erb :chara_template
   end
 
   get '/character/edit/:id' do
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @character = Character.find(params[:id])
     erb :edit
   end
@@ -68,6 +80,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/user/edit/:id' do
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @user = User.find(params[:id])
     @user.update_attributes!(:name => params[:name], :birthday => params[:birthday], :country => params[:country], :image => params[:image], :language => params[:language], :about => params[:about])
     redirect('/user/' + params[:id].to_s)

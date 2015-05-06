@@ -31,7 +31,7 @@
           </ul>
           <ul class="nav navbar-nav login">
              <% if session[:user_id] %>
-              <li class="ui">Welcome <%= @logged_in_user.username %>!|<a href="/signout" style="display: inline">Logout</a></li>
+              <li class="ui">Welcome <%= @user.username %>!|<a href="/signout" style="display: inline">Logout</a></li>
             <% else %>
               <li class="ui"><a href="/">Login or sign up</a></li>
             <% end %>
