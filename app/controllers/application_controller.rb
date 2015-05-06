@@ -71,9 +71,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    new_user = User.new(:email => params[:email], :username => params[:username], :password => params[:password])
+    images = ["http://www.titantalk.com/forums/attachments/off-topic-discussion/319906d1413391273-random-internet-images-random2.jpg", "https://s-media-cache-ak0.pinimg.com/originals/a1/e3/6b/a1e36bcb8ce179bd8cc8db28ff4ef6fb.jpg"].sample
+    new_user = User.new(:email => params[:email], :username => params[:username], :password => params[:password], :image => images)
     new_user.save
-    redirect('/user/' + new_user.id.to_s)
+    redirect('/dash')
   end
 
   get '/user/:id' do
@@ -94,12 +95,10 @@ class ApplicationController < Sinatra::Base
     @user = User.find_by(:username => params[:username], :password => params[:password])
     if @user
       session[:user_id] = @user.id
-      binding.pry
-      redirect('/')
+      redirect('/dash')
     else
-      erb :error
+      erb :error      
     end
-    redirect('/dash')
   end
 
   get '/signout' do
