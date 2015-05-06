@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    @logged_in_user = User.find(session[:user_id])
     erb :index
   end
 
@@ -19,7 +20,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/dash' do
-    @user = User.find_by(1);
+    if session[:user_id]
+      @logged_in_user = User.find(session[:user_id])
+    end
     erb :dash
   end
 
@@ -73,8 +76,21 @@ class ApplicationController < Sinatra::Base
 
   post '/signin' do 
     @user = User.find_by(:username => params[:username], :password => params[:password])
+    if @user
+      session[:user_id] = @user.id
+      binding.pry
+      redirect('/')
+    else
+      erb :error
+    end
+    redirect('/dash')
+  end
+
+  get '/signout' do
+    session[:user_id] = nil
     redirect('/')
   end
+
 
   post '/search' do
     @results = []
