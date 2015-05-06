@@ -144,3 +144,7 @@ body.loading .modal {
 }
 
 
+.login{
+  position: absolute;
+  right: 20px;
+}
