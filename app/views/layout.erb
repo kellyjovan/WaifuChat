@@ -24,7 +24,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+          <% if session[:user_id] %>
             <li class="ui"><a href="/dash">Dash</a></li>
+          <% end %>
             <li class="ui"><a href="/characters">Characters</a></li>
             <li class="ui"><a href="/users">Community</a></li>
           </ul>
