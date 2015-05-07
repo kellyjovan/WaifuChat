@@ -87,10 +87,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/user/edit/:id' do
+    @user = User.find(params[:id])
+    @current = @user.id
     if session[:user_id]
       @user = User.find(session[:user_id])
     end
-    @user = User.find(params[:id])
     erb :edit_user
   end
 
