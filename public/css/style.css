@@ -112,6 +112,12 @@ textarea{
   font-size:16px;
 }
 
+.simple{
+  font-size:16px;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
 .container-fluid{
   background-color:#B4D8E7 !important;
   border-bottom-style: solid;
@@ -148,3 +154,5 @@ body.loading .modal {
   position: absolute;
   right: 20px;
 }
+
+

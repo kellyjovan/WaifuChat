@@ -31,7 +31,9 @@
           <ul class="nav navbar-nav login">
              <% if session[:user_id] %>
              <li class="ui"><a href="/user/edit/<%=@user.id%>">Edit Profile</a></li>
-              <li>Welcome, <%= @user.username %>! | <a href="/signout" style="display: inline">Logout</a></li>
+             <li class="simple">Welcome,</li>
+              <li class="ui"><a href="/user/<%=@user.id%>"><%=@user.username%>!</a> </li>
+              <li class="simple"><a href="/signout" style="display: inline">Logout</a></li>
             <% else %>
               <li class="ui"><a href="/">Login or sign up</a></li>
             <% end %>
