@@ -1,3 +1,4 @@
+<% if session[:user_id] %>
 
     <div class="profile-wrap col-sm-10">
       <ul class="list-group">
@@ -15,3 +16,12 @@
       <% end %>
     </div>
 
+<% else %>
+<center>
+  <div class="error">
+    <h1>Sorry!</h1>
+    <br>
+    <p>You must <a href="/">sign in</a> before doing that.</p>
+  </div>
+</center>
+<% end %>
