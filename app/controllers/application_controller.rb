@@ -77,8 +77,10 @@ class ApplicationController < Sinatra::Base
   post '/signup' do
     images = ["http://www.titantalk.com/forums/attachments/off-topic-discussion/319906d1413391273-random-internet-images-random2.jpg", "https://s-media-cache-ak0.pinimg.com/originals/a1/e3/6b/a1e36bcb8ce179bd8cc8db28ff4ef6fb.jpg"].sample
     new_user = User.new(:email => params[:email], :username => params[:username], :password => params[:password], :image => images)
-    new_user.save
-    redirect('/dash')
+    if new_user.username.downcase.include?("banana") == false
+      new_user.save
+    end
+    redirect('/')
   end
 
   get '/user/:id' do
