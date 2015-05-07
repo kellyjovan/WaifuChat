@@ -27,11 +27,11 @@
             <li class="ui"><a href="/dash">Dash</a></li>
             <li class="ui"><a href="/characters">Characters</a></li>
             <li class="ui"><a href="/users">Community</a></li>
-            <li class="ui"><a href="/edit">Edit Profile</a></li>
           </ul>
           <ul class="nav navbar-nav login">
              <% if session[:user_id] %>
-              <li class="ui">Welcome <%= @user.username %>!|<a href="/signout" style="display: inline">Logout</a></li>
+             <li class="ui"><a href="/user/edit/<%=@user.id%>">Edit Profile</a></li>
+              <li>Welcome, <%= @user.username %>! | <a href="/signout" style="display: inline">Logout</a></li>
             <% else %>
               <li class="ui"><a href="/">Login or sign up</a></li>
             <% end %>

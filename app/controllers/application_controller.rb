@@ -18,6 +18,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/new_character' do 
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     erb :new_character
   end
 
@@ -88,7 +91,6 @@ class ApplicationController < Sinatra::Base
       @user = User.find(session[:user_id])
     end
     @user = User.find(params[:id])
-    redirect('/user/' + params[:id].to_s)
     erb :edit_user
   end
 
