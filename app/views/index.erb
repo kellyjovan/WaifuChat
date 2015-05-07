@@ -1,5 +1,21 @@
   <div class="wrapper">
       <div class="container">
+      <% if session[:user_id] %>
+        <div id="welcome">
+          <h1>Welcome to WaifuChat, <%=@user.username%>!</h1>
+          <br>
+          <p>
+            WaifuChat is a place where you can <a href="/new_character">create</a>, edit, and <a href="/characters">display</a> your favourite characters to the community!
+          </p>
+          <br>
+          <!-- <div class="blog">djkfnae</div> -->
+        </div>
+
+
+
+
+
+        <%else%>
         <div class="col-lg-5 indx-div">
           <h1>Sign up for an account!</h1>
           <form action="signup" method="POST">
@@ -26,7 +42,6 @@
         <div class="col-lg-1">
         <br>
         </div>
-
         <div class="col-lg-5 indx-div">
           <h1>Sign in</h1>
            <form action="signin" method="POST">
@@ -49,3 +64,4 @@
       <br>
     </div>
     <div class="modal"><!-- Place at bottom of page --></div>
+    <%end%>
