@@ -82,7 +82,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/user/:id' do
-    @user = User.find(params[:id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
+    @puser = User.find(params[:id])
     erb :profile
   end
 

@@ -1,12 +1,12 @@
-    <% if @user.image == nil then @user.image = "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"%><% end %> 
+    <% if @puser.image == nil then @puser.image = "http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png"%><% end %> 
     <div class="profile-wrap">
     <div class="row head-wrap">
       <div class="col-lg-3">
-        <img class="pic shadow" src="<%=@user.image%>">
+        <img class="pic shadow" src="<%=@puser.image%>">
       </div>
       <div class="col-lg-7 col-lg-offset-1 title shadow">
-        <h1 class="name"><%=@user.username%></h1>
-        <p class="panel">Member Since:<%=@user.created_at%></p><br>
+        <h1 class="name"><%=@puser.username%></h1>
+        <p class="panel">Member Since:<%=@puser.created_at%></p><br>
         <p class="panel">Last signed on: xxxxxx</p>
       </div>
     </div>
@@ -17,14 +17,14 @@
         <br>
           <ul class="list-group">
               <li class="list-group-item">
-              Name: <%=@user.name%></li>
+              Name: <%=@puser.name%></li>
               <li class="list-group-item">
-              DOB: <%=@user.birthday%></li>
+              DOB: <%=@puser.birthday%></li>
               <li class="list-group-item">
-              Country: <%=@user.country%></li>
+              Country: <%=@puser.country%></li>
              
               <li class="list-group-item">
-              Language: <%=@user.language%></li>
+              Language: <%=@puser.language%></li>
             </ul>
         </div>
 
@@ -38,7 +38,7 @@
           <div class="col-lg-12 title shadow">
             <h1 class="about-h1">About</h1>
             <div class="about-body">
-              <%=@user.about%>
+              <%=@puser.about%>
             </div>
           </div>
         </div>
