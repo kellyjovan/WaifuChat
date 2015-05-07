@@ -12,19 +12,29 @@
 
             <!-- List group -->
             <ul class="list-group">
-              <li class="list-group-item">
-              Birthday: <%= @character.birthday %></li>
-              <li class="list-group-item">
-              Gender: <%= @character.gender %></li>
-              <li class="list-group-item">
-              Origin: <%= @character.origin %></li>
-              <% if @character.quote != nil%>
-              <li class="list-group-item">
-              Quote: <%= @character.quote %></li>
+              <% if @character.birthday != "" %>
+                <li class="list-group-item">
+                  Birthday: <%= @character.birthday %>
+                </li>
               <% end %>
-              <% if @character.nickname == "" then @v = "display: none" else @v = "display: show" end %>
-              <li class="list-group-item" style=<%= @v %>>
-              Nickname: <%= @character.nickname %></li>
+              <li class="list-group-item">
+                Gender: <%= @character.gender %>
+              </li>
+              <% if @character.origin != ""%>
+              <li class="list-group-item">
+                Origin: <%= @character.origin %>
+              </li>
+              <% end %>
+              <% if @character.quote != ""%>
+              <li class="list-group-item">
+                Quote: <%= @character.quote %>
+              </li>
+              <% end %>
+              <% if @character.nickname != "" %>
+              <li class="list-group-item" %>
+                Nickname: <%= @character.nickname %>
+              </li>
+              <% end %>
             </ul>
           </div>
         </div>
