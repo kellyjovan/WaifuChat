@@ -2,11 +2,11 @@ class Likes < ActiveRecord::Migration
   def up
     create_table :likes do |t|
       t.integer :character_id
-      t.integer :thing_id
+      t.string  :like
     end
   end
 
-  def down
+  def down 
     drop_table :likes
   end
 end

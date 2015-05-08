@@ -54,9 +54,16 @@
               <h3 class="panel-title">Likes</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item">Thing 1</li>
-              <li class="list-group-item">Thing 2</li>
-              <li class="list-group-item">Thing 3</li>
+              <% likes = [] %>
+              <% @likes.each do |l| %>
+                <% if l.character_id == @character.id %>
+                <% likes << l.like %>
+                <li class="list-group-item"><%= l.like %></li>
+                <% end %>
+              <% end %>
+              <% if likes.length == 0%>
+                <li class="list-group-item">There are currently no likes</li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -66,9 +73,16 @@
               <h3 class="panel-title">Dislikes</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item">Thing 1</li>
-              <li class="list-group-item">Thing 2</li>
-              <li class="list-group-item">Thing 3</li>
+              <% dislikes = [] %>
+              <% @dislikes.each do |d| %>
+                <% dislikes << d.dislike %>
+                <% if d.character_id == @character.id %>
+                <li class="list-group-item"><%= d.dislike %></li>
+                <% end %>
+              <% end %> 
+              <% if dislikes.length == 0 %>
+                <li class="list-group-item">There are currently no dislikes</li>
+              <% end %>           
             </ul>
           </div>
         </div>
@@ -78,7 +92,11 @@
               <h3 class="panel-title">Appearances</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item">Appearance 1</li>
+              <% @appearances.each do |a| %>
+                <% if a.character_id == @character.id %>
+                <li class="list-group-item"><%= a.appearance %></li>
+                <% end %>
+              <% end %>
             </ul>
           </div>
         </div>

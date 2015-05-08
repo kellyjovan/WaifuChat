@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504213654) do
+ActiveRecord::Schema.define(version: 20150508230648) do
+
+  create_table "appearances", force: :cascade do |t|
+    t.integer "character_id"
+    t.string  "appearance"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -24,14 +29,19 @@ ActiveRecord::Schema.define(version: 20150504213654) do
     t.string "image"
   end
 
-  create_table "likes", force: :cascade do |t|
+  create_table "dislikes", force: :cascade do |t|
     t.integer "character_id"
-    t.integer "thing_id"
+    t.string  "dislike"
   end
 
-  create_table "things", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
+  create_table "likes", force: :cascade do |t|
+    t.integer "character_id"
+    t.string  "like"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string  "message"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

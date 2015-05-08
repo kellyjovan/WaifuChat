@@ -28,6 +28,8 @@ class ApplicationController < Sinatra::Base
     if session[:user_id]
       @user = User.find(session[:user_id])
     end
+    @messages = Message.all
+    @users = User.all
     erb :dash
   end
 
@@ -53,6 +55,9 @@ class ApplicationController < Sinatra::Base
       @user = User.find(session[:user_id])
     end
     @character = Character.find(params[:id])
+    @appearances = Appearance.all
+    @likes = Like.all
+    @dislikes = Dislike.all
     erb :chara_template
   end
 
@@ -61,6 +66,10 @@ class ApplicationController < Sinatra::Base
       @user = User.find(session[:user_id])
     end
     @character = Character.find(params[:id])
+    @character = Character.find(params[:id])
+    @appearances = Appearance.all
+    @likes = Like.all
+    @dislikes = Dislike.all
     erb :edit
   end
   get '/search' do
@@ -71,6 +80,18 @@ class ApplicationController < Sinatra::Base
     params[:name] =  params[:name].split(' ').each{|n| n.capitalize!}.join(' ')
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
+    params[:likes].each do |l|
+      new_like = Like.new(:character_id => new_character.id, :like => l);
+      new_like.save
+    end
+    params[:dislikes].each do |d|
+      new_dislike = Dislike.new(:character_id => new_character.id, :dislike => d);
+      new_dislike.save
+    end
+    params[:appearances].each do |a|
+      new_appearance = Appearance.new(:character_id => new_character.id, :appearance => a);
+      new_appearance.save
+    end
     redirect('/character/' + new_character.id.to_s);
   end
 
@@ -139,6 +160,21 @@ class ApplicationController < Sinatra::Base
   post '/edit' do
     @character = Character.find(params[:id])
     @character.update_attributes!(:origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
+    params[:likes].each do |l|
+
+    end
+    params[:dislikes].each do |d|
+
+    end
+    params[:appearances].each do |a|
+
+    end
     redirect('/character/' + @character.id.to_s)
+  end
+
+  post '/message' do
+    new_message = Message.new(:user_id => params[:user_id], :message => params[:message])
+    new_message.save
+    redirect ('/dash')
   end
 end
