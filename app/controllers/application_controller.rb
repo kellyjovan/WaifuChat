@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
     if session[:user_id]
       @user = User.find(session[:user_id])
     end
-    @messages = Message.all
+    @messages = Message.all.reverse
     @users = User.all
     erb :dash
   end
