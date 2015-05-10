@@ -87,13 +87,13 @@ class ApplicationController < Sinatra::Base
       end
     end
     params[:dislikes].each do |d|
-      if l != ""
+      if d != ""
         new_dislike = Dislike.new(:character_id => new_character.id, :dislike => d);
         new_dislike.save
       end
     end
     params[:appearances].each do |a|
-      if l != ""
+      if a != ""
        new_appearance = Appearance.new(:character_id => new_character.id, :appearance => a);
        new_appearance.save
       end
