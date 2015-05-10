@@ -71,12 +71,16 @@
           <label class="col-sm-2 control-label">Likes</label>
           <div class="col-sm-9">
             <div class="likes lwrapper">
-              <div class="form-group">
-                <% @likes.each do |l| %>
-                  <% if l.character_id == @character.id %>
-                    <input type="text" class="form-control" name="likes[]" placeholder="Like" value="<%= l.like %>">
-                  <% end %>
+              <% @likes.each do |l| %>
+                <% if l.character_id == @character.id %>
+                <div class="form-group">
+                  <input type="hidden" name="lids[]" value="<%= l.id %>"/>
+                  <input type="text" class="form-control" name="currentlikes[]" placeholder="Like" value="<%= l.like %>">
+                </div>
                 <% end %>
+              <% end %>
+              <div class="form-group">
+                <input type="text" class="form-control" name="likes[]" placeholder="Like"/>
               </div>
             </div>
            <div class="btn btn-primary" id="like_btn">Add Like</div>
@@ -89,12 +93,16 @@
           <label class="col-sm-2 control-label">Dislikes</label>
           <div class="col-sm-9">
             <div class="dislikes lwrapper">
-              <div class="form-group">
-                <% @dislikes.each do |d| %>
-                  <% if d.character_id == @character.id %>
-                    <input type="text" class="form-control" name="dislikes[]" placeholder="Like" value="<%= d.dislike %>">
-                  <% end %>
+              <% @dislikes.each do |d| %>
+                <% if d.character_id == @character.id %>
+                <div class="form-group">
+                  <input type="hidden" name="dids[]" value="<%= d.id %>"/>
+                  <input type="text" class="form-control" name="currentdislikes[]" placeholder="Dislike" value="<%= d.dislike %>">
+                </div>
                 <% end %>
+              <% end %>
+              <div class="form-group">
+               <input type="text" class="form-control" name="dislikes[]" placeholder="Dislike"/>
               </div>
             </div>
               <div class="btn btn-primary" id="dislike_btn">Add Dislike</div>
@@ -107,9 +115,17 @@
           <label class="col-sm-2 control-label">Appearances</label>
           <div class="col-sm-9">
             <div class="appearances lwrapper">
-              <div class="form-group">
-                <input type="text" class="form-control" name="appearances" placeholder="Appearance">
-              </div>
+              <% @appearances.each do |a| %>
+                <% if a.character_id == @character.id %>
+                 <div class="form-group">
+                  <input type="hidden" name="aids[]" value="<%= a.id %>"/>
+                  <input type="text" class="form-control" name="currentappearances[]" placeholder="Appearance" value="<%= a.appearance %>">
+                </div>
+                <% end %>
+              <% end %>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="appearances[]" placeholder="Appearance"/>
+               </div>
             </div>
               <div class="btn btn-primary" id="appearance_btn">Add Appearance</div>
             </div>

@@ -81,16 +81,22 @@ class ApplicationController < Sinatra::Base
     new_character = Character.new(:name => params[:name], :gender => params[:gender], :origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
     new_character.save
     params[:likes].each do |l|
-      new_like = Like.new(:character_id => new_character.id, :like => l);
-      new_like.save
+      if l != ""
+        new_like = Like.new(:character_id => new_character.id, :like => l);
+        new_like.save
+      end
     end
     params[:dislikes].each do |d|
-      new_dislike = Dislike.new(:character_id => new_character.id, :dislike => d);
-      new_dislike.save
+      if l != ""
+        new_dislike = Dislike.new(:character_id => new_character.id, :dislike => d);
+        new_dislike.save
+      end
     end
     params[:appearances].each do |a|
-      new_appearance = Appearance.new(:character_id => new_character.id, :appearance => a);
-      new_appearance.save
+      if l != ""
+       new_appearance = Appearance.new(:character_id => new_character.id, :appearance => a);
+       new_appearance.save
+      end
     end
     redirect('/character/' + new_character.id.to_s);
   end
@@ -147,7 +153,7 @@ class ApplicationController < Sinatra::Base
     # delete character with selected id
     id = params[:id]
     @character = Character.find(id)
-    @character.destroy
+    @character.delete
     redirect('/characters')
   end
 
@@ -160,15 +166,55 @@ class ApplicationController < Sinatra::Base
   post '/edit' do
     @character = Character.find(params[:id])
     @character.update_attributes!(:origin => params[:origin], :birthday => params[:birthday], :bio => params[:bio], :image => params[:image], :quote => params[:quote], :nickname => params[:nickname])
+    # binding.pry
     params[:likes].each do |l|
-
+      if l != ""
+        new_like = Like.new(:character_id => @character.id, :like => l)
+        new_like.save
+      end
     end
+    if params[:currentlikes]
+      params[:currentlikes].each_with_index do |l,n|
+        Like.all.each do |like|
+          if like.id == params[:lids][n].to_i
+            Like.all.find_by(:id => params[:lids][n].to_i).update_attributes!(:like => l)
+          end
+        end
+      end
+    end
+
     params[:dislikes].each do |d|
-
+      if d != ""
+        new_dislike = Dislike.new(:character_id => @character.id, :dislike => d)
+        new_dislike.save
+      end
     end
+    if params[:currentdislikes]
+      params[:currentdislikes].each_with_index do |d,n|
+        Dislike.all.each do |dislike|
+          if dislike.id == params[:dids][n].to_i
+            Dislike.all.find_by(:id => params[:dids][n].to_i).update_attributes!(:dislike => d)
+          end
+        end
+      end
+    end
+
     params[:appearances].each do |a|
-
+      if a != ""
+        new_appearance = Appearance.new(:character_id => @character.id, :appearance => a)
+        new_appearance.save
+      end
     end
+    if params[:currentappearances]
+      params[:currentappearances].each_with_index do |a,n|
+        Appearance.all.each do |appearance|
+          if appearance.id == params[:aids][n].to_i
+            Appearance.all.find_by(:id => params[:aids][n].to_i).update_attributes!(:appearance => a)
+          end
+        end
+      end
+    end
+
     redirect('/character/' + @character.id.to_s)
   end
 
