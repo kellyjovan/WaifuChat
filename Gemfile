@@ -12,5 +12,9 @@ group :development do
   gem "pry"
   gem "shotgun"
   gem "tux"
+
 end
 
+group :production do
+  gem 'pg'
+end

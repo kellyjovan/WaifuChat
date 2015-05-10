@@ -16,4 +16,8 @@ $(document).ready(function(){
   $('.lwrapper').on('click', '.fa-times',function(){
     $(this).parent('div').remove();
   });
+
+      $('.message-btn').click(function () {
+        $('.message-container').load('/dash')
+    });
 });
